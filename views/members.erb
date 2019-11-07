@@ -1,0 +1,10 @@
+<h1>Hello Admin!</h1>
+
+<div class="griduser">
+  <% @users.each do |user| %>
+    <div class="item">
+        <h3>  <%= user["username"] %> , <%= user["email"] %></h3>
+      
+    </div>
+  <% end %>
+</div>

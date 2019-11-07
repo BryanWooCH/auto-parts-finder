@@ -1,0 +1,33 @@
+
+<form action="/user_update?id=<%= @user["id"] %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div>
+    <label for="">User name</label>
+    <input type="text" name="username" value="<%= @user["username"]%>">
+  </div>
+  <div>
+    <label for="">User email</label>
+    <input type="text" name="email" value="<%= @user["email"]%>">
+  </div>
+   <div>
+    <label for="">Delivery address</label>
+    <input type="text" name="delivery_address" value="<%= @user["delivery_address"]%>">
+  </div>
+  <div>
+    <label for="">Car model</label>
+    <input type="text" name="users_car" value="<%= @user["users_car"]%>">
+  </div>
+   <div>
+    <label for="">Model year</label>
+    <input type="text" name="users_car_year" value="<%= @user["users_car_year"]%>">
+  </div>
+  <div class="pw">
+    <label for="">New password</label>
+    <input type="password" name="password">
+  </div>
+  <button>Update my details</button>
+</form>
+
+ <a href="/user_details?id=<%= @user["id"] %>">
+    <button>Return to my profile</button>
+  </a>

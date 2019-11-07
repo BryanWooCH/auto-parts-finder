@@ -1,0 +1,80 @@
+
+<div class="search_way">
+  <ul>
+    <li class="li_cataloge" >Cataloge Search</li>
+    <li class="li_keywords" >Keywords Search</li>
+    <li class="li_parts_num" >Parts Number Search</li>
+  </ul>
+</div>
+<div class="search_bar">
+  <div class="parts_num active">
+    <form action="/search_by_parts_number" method= "get">
+      <label for=""></label>
+      <div class="align">
+        <input type="text" name = "parts_number" placeholder = 'Enter parts number here.'>   
+        <button>Search</button>
+      </div> 
+    </form>
+  </div>
+
+  <div class="keywords deactive">
+    <form action="/search_by_keywords" method= "get">
+      <label for=""></label>
+      <div class="align">
+        <input type="text" name = "model" placeholder = 'Enter your car here.'>   
+        <input type="text" name = "year" placeholder = 'Enter model year.'>   
+        <button>Search</button>
+      </div> 
+    </form>
+  </div>
+
+
+  <div class="cataloge deactive">
+    <form action="/search_by_make" method= "get">
+      <div class="align">
+        <select class="select-css" name="make" placeholder="Select Make">
+          <option value=""disabled selected hidden>Select your option</option>
+          <option class="option-css" value="ford">Ford</option>
+          <option class="option-css" value="holden">Holden</option>
+          <option class="option-css" value="hyundai">Hyundai</option>
+          <option class="option-css" value="mazda">Mazda</option>
+          <option class="option-css" value="toyota">Toyota</option>
+        </select>
+        <button>Search</button>
+      </div> 
+    </form>
+  </div>
+</div>
+
+
+
+<div class="parts-info">
+  <div class="parts_img">
+  <img src="<%= @parts_img_url %>" alt="">
+  </div>
+  <div class="parts_details">
+    <h2>Parts Number: <%= @parts_detail['parts_number'] %></h2>
+    <h2>Parts Detail: <%= @parts_detail['parts_name'] %></h2>
+    <h2>Price: AU $<%= @parts_detail['retail_price'] %></h2>
+    <h2><a href="<%= @ebay_search+@parts_number+@best_match %>" target="_blank">ebay Best Match</a></h2>
+    <h2><a href="<%= @ebay_search+@parts_number+@lowest_price %>" target="_blank">ebay Lowest Price</a></h2>
+   </div>
+</div>
+
+
+
+
+
+<div class="applicable_car">
+  <% @found_parts.each do |parts_with_car| %>
+    <div class="item">
+      <h2>  <%= parts_with_car['make'] %> </h2>
+      <h2>  <%= parts_with_car['model'] %> </h2>
+      <h2>  <%= parts_with_car['fromyear'] %>-<%= parts_with_car['toyear'] %> </h2>
+      <h2>  <%= parts_with_car['variant'] %> </h2>
+    </div>
+  <% end %>
+</div>
+
+
+

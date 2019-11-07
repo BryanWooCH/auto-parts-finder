@@ -1,0 +1,49 @@
+<h1>Auto Parts Finder</h1>
+<main>
+  <div class="search_way">
+    <ul>
+      <li class="li_cataloge" >Cataloge Search</li>
+      <li class="li_keywords" >Keywords Search</li>
+      <li class="li_parts_num" >Parts Number Search</li>
+    </ul>
+  </div>
+  <div class="search_bar">
+    <div class="parts_num deactive">
+      <form action="/search_by_parts_number" method= "get">
+        <label for=""></label>
+        <div class="align">
+          <input type="text" name = "parts_number" placeholder = 'Enter parts number here.'>   
+          <button>Search</button>
+        </div> 
+      </form>
+    </div>
+
+    <div class="keywords active">
+      <form action="/search_by_keywords" method= "get">
+        <label for=""></label>
+        <div class="align">
+          <input type="text" name = "model" placeholder = 'Enter your car here.'>   
+          <input type="text" name = "year" placeholder = 'Enter model year.'>   
+          <button>Search</button>
+        </div> 
+      </form>
+    </div>
+
+
+    <div class="cataloge deactive">
+      <form action="/search_by_make" method= "get">
+        <div class="align">
+          <select class="select-css" name="make" placeholder="Select Make">
+            <option value=""disabled selected hidden>Select your option</option>
+            <option class="option-css" value="ford">Ford</option>
+            <option class="option-css" value="holden">Holden</option>
+            <option class="option-css" value="hyundai">Hyundai</option>
+            <option class="option-css" value="mazda">Mazda</option>
+            <option class="option-css" value="toyota">Toyota</option>
+          </select>
+          <button>Search</button>
+        </div> 
+      </form>
+    </div>
+  </div>
+</main>

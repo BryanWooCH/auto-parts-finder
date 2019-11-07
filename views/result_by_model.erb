@@ -1,0 +1,87 @@
+<div class="search_way">
+  <ul>
+    <li class="li_cataloge" >Cataloge Search</li>
+    <li class="li_keywords" >Keywords Search</li>
+    <li class="li_parts_num" >Parts Number Search</li>
+  </ul>
+</div>
+<div class="search_bar">
+  <div class="parts_num deactive">
+    <form action="/search_by_parts_number" method= "get">
+      <label for=""></label>
+      <div class="align">
+        <input type="text" name = "parts_number" placeholder = 'Enter parts number here.'>   
+        <button>Search</button>
+      </div> 
+    </form>
+  </div>
+
+  <div class="keywords active">
+    <form action="/search_by_keywords" method= "get">
+      <label for=""></label>
+      <div class="align">
+        <input type="text" name = "model" placeholder = 'Enter your car here.'>   
+        <input type="text" name = "year" placeholder = 'Enter model year.'>   
+        <button>Search</button>
+      </div> 
+    </form>
+  </div>
+
+
+  <div class="cataloge deactive">
+    <form action="/search_by_make" method= "get">
+      <div class="align">
+        <select class="select-css" name="make" placeholder="Select Make">
+          <option value=""disabled selected hidden>Select your option</option>
+          <option class="option-css" value="ford">Ford</option>
+          <option class="option-css" value="holden">Holden</option>
+          <option class="option-css" value="hyundai">Hyundai</option>
+          <option class="option-css" value="mazda">Mazda</option>
+          <option class="option-css" value="toyota">Toyota</option>
+        </select>
+        <button>Search</button>
+      </div> 
+    </form>
+  </div>
+</div>
+
+<div class="model-info">
+  <h2>Make: <%= @found_model['make'] %></h2>
+  <h2>Model: <%= @found_model['model'] %></h2>
+  <h2>Year: <%= @year %></h2>
+  <h2>Variant: <%= @found_model['variant'] %></h2>
+</div>
+
+<div class="parts">
+  <div class="front_brake_pad">
+    <img src="<%= @front_brake_img %>" alt="">
+    <h3>Front Brake Pad Set</h3>
+    <h3><%= @found_model['brake_pad_front'] %></h3>
+    <a href="<%= @ebay_search+@found_model['brake_pad_front']+@best_match %>" target="_blank">ebay Best Match</a>
+    <a href="<%= @ebay_search+@found_model['brake_pad_front']+@lowest_price %>" target="_blank">ebay Lowest Price</a>
+  </div>
+  <div class="rear_brake_pad">
+    <img src="<%= @rear_brake_img %>" alt="">
+    <h3>Rear Brake Pad Set</h3>
+    <h3><%= @found_model['brake_pad_rear'] %></h3>
+    <a href="<%= @ebay_search+@found_model['brake_pad_rear']+@best_match %>" target="_blank">ebay Best Match</a>
+    <a href="<%= @ebay_search+@found_model['brake_pad_rear']+@lowest_price %>" target="_blank">ebay Lowest Price</a>
+  </div>
+  <div class="oil_filter">
+    <img src="<%= @oil_filter_img %>" alt="">
+    <h3>Engine Oil Filter</h3>
+    <h3><%= @found_model['oil_filter'] %></h3>
+    <a href="<%= @ebay_search+@found_model['oil_filter']+@best_match %>" target="_blank">ebay Best Match</a>
+    <a href="<%= @ebay_search+@found_model['oil_filter']+@lowest_price %>" target="_blank">ebay Lowest Price</a>
+  </div>  
+  <div class="air_filter">
+    <img src="<%= @air_filter_img %>" alt="">
+    <h3>Air Filter</h3>
+    <h3><%= @found_model['air_filter'] %></h3>
+    <a href="<%= @ebay_search+@found_model['air_filter']+@best_match %>" target="_blank">ebay Best Match</a>
+    <a href="<%= @ebay_search+@found_model['air_filter']+@lowest_price %>" target="_blank">ebay Lowest Price</a>
+  </div>
+</div>
+
+
+

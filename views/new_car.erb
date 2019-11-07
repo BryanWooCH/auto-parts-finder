@@ -1,0 +1,43 @@
+<form class="car_new"action="/car_create" method="post"  >
+  <div>
+    <label for="">Make</label>
+    <input type="text" name="make">
+  </div>
+  <div>
+    <label for="">Model</label>
+    <input type="text" name="model">
+  </div>
+   <div>
+    <label for="">Start year</label>
+    <input type="text" name="fromyear">
+  </div>
+  <div>
+    <label for="">End year</label>
+    <input type="text" name="toyear">
+  </div>
+   <div>
+    <label for="">Variant</label>
+    <input type="text" name="variant">
+  </div>
+  <div>
+    <label for="">Front Brake Parts No.</label>
+    <input type="text" name="brake_pad_front">
+  </div>
+  <div>
+    <label for="">Rear Brake Parts No.</label>
+    <input type="text" name="brake_pad_rear">
+  </div>
+  <div>
+    <label for="">Oil Filter Parts No.</label>
+    <input type="text" name="oil_filter">
+  </div>
+  <div>
+    <label for="">Air Filter Parts No.</label>
+    <input type="text" name="air_filter">
+  </div>
+
+  <button>Register car details</button>
+</form>
+  <a href="/db?id=<%= 13 %>">
+    <button>Return to car DB</button>
+  </a>
