@@ -79,12 +79,13 @@ get '/search_by_parts_number' do
   end
 end
 
-post '/admin' do
+get '/admin' do
   @user = params[:id]
   erb :admin
 end
 
 get '/db' do
+  @user = params[:id]
   @cars = all_cars()
   # @parts = all_parts()
   @partsinfo = all_partsinfo()
@@ -116,6 +117,7 @@ post '/car_create' do
 end
 
 get '/members' do
+  @user = params[:id]
   @users = all_users()
   erb :members
 end

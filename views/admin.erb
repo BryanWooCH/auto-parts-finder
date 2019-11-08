@@ -1,10 +1,26 @@
-<h2>Wellcome</h2>
+<% if @user == '13' && @user == session[:user_id] %>
+  <div class="admin_welcome">
+    <h2>Wellcome Administration Mode</h2>
+  </div>
+  <div class="admin_buttons">
+    <form action="/members" method="get">
+      <input type="hidden" name="id" value="<%= @user%>" >
+      <button>member list</button>
+    </form>
 
-<form action="/members" method="get">
-  <button>member list</button>
-</form>
-
- 
-<form action="/db?id=<%= @user["id"] %>" method="get">
-    <button>Update DB</button>
- </form> 
+    <form action="/db" method="get">
+      <input type="hidden" name="id" value="<%= @user%>" >
+        <button>Update DB</button>
+    </form> 
+  </div>
+<% else %>
+  <div class="wrongway">
+    <h1> Incorrect input for memberdetails </h1>
+    <div class="wrongway_form">
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Return to Home</button>
+      </form>
+    </div>  
+  </div>
+<% end %>

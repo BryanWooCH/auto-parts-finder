@@ -1,68 +1,82 @@
 
-
-
-<div class="table">
-  <div class="car_table">
-    <a href="/car_new">New Car Add</a>
-    <table>
-      <tr>
-        <th>Make</th>
-        <th>Model</th>
-        <th>Year</th>  
-        <th>Variant</th>
-        <th>Front Brake Pad</th>
-        <th>Rear Brake Pad</th> 
-        <th>Oil Filter</th>  
-        <th>Air Filter</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-      <% @cars.each do |car| %>
+<% if @user == '13' && @user == session[:user_id] %>
+  <div class="table">
+    <div class="car_table">
+      <div class="new_car">
+        <a href="/car_new">New Car Add</a>
+      </div>
+      <table>
         <tr>
-          <td> <%= car["make"] %> </td>
-          <td> <%= car["model"] %> </td>
-          <td> <%= car["fromyear"] %>-<%= car["toyear"] %></td>
-          <td> <%= car["variant"] %> </td>
-          <td> <%= car["brake_pad_front"] %> </td>
-          <td> <%= car["brake_pad_rear"] %> </td>
-          <td> <%= car["oil_filter"] %> </td>
-          <td> <%= car["air_filter"] %> </td>
-          <td> 
-            <a href="/car_edit?id=<%= car["id"] %> ">
-            <button>edit</button>
-            </a> 
-          </td>
-          <td> 
-            <form action="/car_delete" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="hidden" name="id" value="<%= car["id"] %>">
-            <button>delete</button>
-            </form>
-          </td>
+          <th>Make</th>
+          <th>Model</th>
+          <th>Year</th>  
+          <th>Variant</th>
+          <th>Front Brake Pad</th>
+          <th>Rear Brake Pad</th> 
+          <th>Oil Filter</th>  
+          <th>Air Filter</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
-      <% end %>
-    </table>
+        <% @cars.each do |car| %>
+          <tr>
+            <td> <%= car["make"] %> </td>
+            <td> <%= car["model"] %> </td>
+            <td> <%= car["fromyear"] %>-<%= car["toyear"] %></td>
+            <td> <%= car["variant"] %> </td>
+            <td> <%= car["brake_pad_front"] %> </td>
+            <td> <%= car["brake_pad_rear"] %> </td>
+            <td> <%= car["oil_filter"] %> </td>
+            <td> <%= car["air_filter"] %> </td>
+            <td> 
+              <a href="/car_edit?id=<%= car["id"] %> ">
+              <button>edit</button>
+              </a> 
+            </td>
+            <td> 
+              <form action="/car_delete" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="hidden" name="id" value="<%= car["id"] %>">
+              <button>delete</button>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="parts_table">
+      <table>
+        <tr>
+          <th>Parts Number</th>
+          <th>Parts Name</th>
+          <th>Description</th>  
+          <th>Manufacturer</th>
+          <th>Retail Price</th>
+          <th>Cost Price</th> 
+          <th>Image URL</th>  
+        </tr>
+        <% @partsinfo.each do |parts| %>
+          <tr>
+            <td> <%= parts["parts_number"] %> </td>
+            <td> <%= parts["parts_name"] %> </td>
+            <td> <%= parts["description"] %> </td>
+            <td> <%= parts["manufacturer"] %> </td>
+            <td> <%= parts["retail_price"] %> </td>
+            <td> <%= parts["cost_price"] %> </td>
+            <td> <%= parts["parts_image_url"] %> </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
- <table>
-    <tr>
-      <th>Parts Number</th>
-      <th>Parts Name</th>
-      <th>Description</th>  
-      <th>Manufacturer</th>
-      <th>Retail Price</th>
-      <th>Cost Price</th> 
-      <th>Image URL</th>  
-    </tr>
-    <% @partsinfo.each do |parts| %>
-      <tr>
-        <td> <%= parts["parts_number"] %> </td>
-        <td> <%= parts["parts_name"] %> </td>
-        <td> <%= parts["description"] %> </td>
-        <td> <%= parts["manufacturer"] %> </td>
-        <td> <%= parts["retail_price"] %> </td>
-        <td> <%= parts["cost_price"] %> </td>
-        <td> <%= parts["parts_image_url"] %> </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<% else %>
+  <div class="wrongway">
+    <h1> Incorrect input for memberdetails </h1>
+    <div class="wrongway_form">
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Return to Home</button>
+      </form>
+    </div>  
+  </div>
+<% end %>

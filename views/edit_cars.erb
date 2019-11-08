@@ -1,5 +1,5 @@
 
-<form action="/car_update?id=<%= @car["id"] %>" method="post">
+<form class="car_edit" action="/car_update?id=<%= @car["id"] %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <div>
     <label for="">Make</label>
@@ -37,10 +37,10 @@
     <label for="">Air Filter Parts No.</label>
     <input type="text" name="air_filter" value="<%= @car["air_filter"]%>">
   </div>
-
-  <button>Update car details</button>
+  <div class="button">
+    <button>Update car details</button>
+    <a href="/db?id=<%= 13 %>">
+      <button>Return to car DB</button>
+    </a>
+  </div>
 </form>
-
-  <a href="/db?id=<%= 13 %>">
-    <button>Return to car DB</button>
-  </a>

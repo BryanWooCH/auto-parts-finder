@@ -1,4 +1,10 @@
+header {
+  margin-top: 3%;
 
+}
+header h1{
+  text-align: center;
+}
 nav {
   margin: 2% 5% 1% 5%;
   display: flex;
@@ -25,7 +31,7 @@ li {
   margin: 2% 2% 0 2%;
   border: none;
   cursor: pointer;
-  padding: 2px;
+  padding: 5px;
   border-radius: 5px 5px 0px 0px;
 }
 main {
@@ -54,7 +60,7 @@ main {
 }
 
 .search_bar div{
-  width: 500px;
+  width: 650px;
   height: 50px;
   border: none;
   position: absolute;
@@ -148,8 +154,8 @@ main {
 .parts {
   display: grid;
   /* grid-template-columns: 100px 100px 100px; */
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
   grid-gap: 10px 20px;
   text-align: center;
   margin: 2% 6% 2% 6%;
@@ -234,6 +240,28 @@ margin: 10px;
   align-items: center;
 }
 
+.new_car {
+  width: 150px;
+  margin: 5px 0 10px auto;
+}
+
+.car_table {
+  width: 45%;
+}
+.car_table table {
+  width: 100%;
+}
+
+.parts_table {
+  width: 45%;
+}
+.parts_table table {
+  width: 100%;
+}
+
+
+
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -248,4 +276,138 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.user_new {
+  width: 300px;
+  margin: auto;
+}
+.user_new div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.user_new .button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 6px 10px 6px 10px;
+  border-radius: 6px;
+}
+input {
+  padding: 6px 2px 6px 2px;
+  border-radius: 6px;
+}
+.loginform{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2% auto;
+  width: 600px;
+}
+.mydetails {
+  margin: 2% auto;
+  width: 500px;
+}
+.mydetails_button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2% auto;
+  width: 500px;
+}
+
+.admin_welcome{
+  text-align: center;
+}
+.admin_buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2% auto;
+  width: 500px;
+}
+.members_list {
+  text-align: center;
+}
+
+.members_list_table {
+  margin: 2% auto;
+  width: 600px;
+}
+.wrongway {
+  color: red;
+  width: 400px;
+  margin: 5% auto;
+}
+.wrongway h1{
+  text-align: center;
+}
+.wrongway button{
+  color: red;
+  width: 200px;
+}
+.wrongway_form {
+  color: red;
+  margin: 5% 100px;
+}
+
+.user_edit {
+  width: 300px;
+  margin: auto;
+}
+.user_edit div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.user_edit .button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.car_edit {
+  width: 300px;
+  margin: auto;
+}
+.car_edit div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.car_edit .button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.car_new {
+  width: 300px;
+  margin: auto;
+}
+.car_new div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.car_new .button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
 }

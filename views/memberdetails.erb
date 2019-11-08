@@ -1,34 +1,60 @@
 
 <% if @user["id"] == session[:user_id] %>
-  <h1>  my details </h1>
-  <h3>User name: <%= @user["username"] %></h3>
-  <h3>User email: <%= @user["email"] %></h3>
-  <h3>Delivery address: <%= @user["delivery_address"] %></h3>
-  <h3>Car model: <%= @user["users_car"] %></h3>
-  <h3>Model year: <%= @user["users_car_year"] %></h3>
+  <table class="mydetails">
+    <tr>
+      <th>List</th>
+      <th>My details</th>
+    </tr>
+    <tr>
+      <td>User name</td>
+      <td> <%= @user["username"] %> </td>
+    </tr>
+    <tr>
+      <td>User email</td>
+      <td> <%= @user["email"] %> </td>
+    </tr>
+    <tr>
+      <td>Delivery address</td>
+      <td> <%= @user["delivery_address"] %></td>
+    </tr>
+    <tr>
+      <td>Car model</td>
+      <td> <%= @user["users_car"] %> </td>
+    </tr>
+    <tr>
+      <td>Model year</td>
+      <td> <%= @user["users_car_year"] %> </td>
+    </tr>
+  </table>
+  <div class="mydetails_button">
+    <a href="/user_edit?id=<%= @user["id"] %> ">
+      <button>edit</button>
+    </a>
 
-  <a href="/user_edit?id=<%= @user["id"] %> ">
-    <button>edit</button>
-  </a>
+    <form action="/user_delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="id" value="<%= @user["id"] %>">
+      <button>delete</button>
+    </form>
 
-  <form action="/user_delete" method="post">
-    <!--  chrom doesnt support method="delete" but sinatra still has function for method delete with input tag -->
-    <input type="hidden" name="_method" value="delete">
-    <input type="hidden" name="id" value="<%= @user["id"] %>">
-    <button>delete</button>
-  </form>
-
-  <% if @user["id"] == '13' %>
-  <form action="/admin?id=<%= @user["id"] %>" method="post">
-      <button>Check DB</button>
-  </form> 
-  <% end %>
+    <% if @user["id"] == '13' %>
+    <form action="/admin" method="get">
+      <input type="hidden" name="id" value="<%= @user["id"]%>" >
+        <button>Check DB</button>
+    </form> 
+    <% end %>
+  </div>
 <% else %>
-  <h1> Incorrect inout for memberdetails </h1>
-  <form action="/logout" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button>Return to Home</button>
-  </form>
+  <div class="wrongway">
+    <h1> Incorrect input for memberdetails </h1>
+    <div class="wrongway_form">
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Return to Home</button>
+      </form>
+    </div>  
+  </div>
 <% end %>
+
 
 
