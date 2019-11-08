@@ -2,7 +2,7 @@
 
 ### Auto Parts Finder Overview
 
-Find your car's consumable parts in easy way**
+**Find your car's consumable parts in easy way**
 
 ---
 ### Auto Parts Finder Instruction
