@@ -7,13 +7,15 @@
 **[Auto Parts Finder](https://auto-parts-finder.herokuapp.com/)**
 
 
+ ![Wire Frame](https://github.com/BryanWooCH/TicTacToe/blob/master/searchResult.png?raw=true)
+
 ---
 ### Auto Parts Finder Instruction
 
 * **Search the Auto Parts using Keywords Search**
 * **Search the Auto Parts using Parts Number Search**
 * **shopping through ebay**
-* Register your car for future visiting make more easy.
+* **Register your car for future visiting make more easy.**
 
 ---
 ### Employed Technologies
@@ -22,6 +24,11 @@
 * **CSS3**
 * **JavaScript**
 * **Ruby**
+
+---
+### Wire Frame
+
+  ![Wire Frame](https://github.com/BryanWooCH/TicTacToe/blob/master/wireFrame.png?raw=true)
 
 ---
 ### Approaches to Acheive All Functional Features For The Finder
@@ -34,8 +41,8 @@
 ---
 ### Challenges
 
-* structuring search bar
-* remembering event listener function from JS
+* Structuring search bar
+* Remembering event listener function from JS
 * DB mamaging including table structure
 * Tracking the valid log-in user
 * Secure administration access to protect DB 
