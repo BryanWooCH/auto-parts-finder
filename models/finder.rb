@@ -1,18 +1,8 @@
 
-# DRY - dont repeat yourself
-
-# re-directing
-
 def run_sql(sql)
-  #connect
-  # conn = PG.connect(dbname: "goodfoodhunting") 
-  # db is in my laptop for development.
 
-
-  conn = PG.connect(ENV['DATABASE_URL']|| {dbname: "autopartsdb"})  # for production and deploy 
-
+  conn = PG.connect(ENV['DATABASE_URL']|| {dbname: "autopartsdb"})  
   records = conn.exec(sql)
-  #close
   conn.close
   return records
 end
@@ -22,10 +12,6 @@ end
 def all_cars()
   return run_sql("SELECT * FROM cars;")
 end
-
-# def all_parts()
-#   return run_sql("SELECT * FROM parts;")
-# end
 
 def all_partsinfo()
   return run_sql("SELECT * FROM partsinfo;")
@@ -45,10 +31,6 @@ def find_one_model(model, year)
   return run_sql("select * from cars where model = '#{model}'and fromyear <= '#{year}' and toyear >= '#{year}';").first
 end
 
-# def find_parts_by_model(id)
-#   return run_sql("select * from parts where car_id = #{id};").first
-# end
-
 def find_parts_info_detail(parts_number)
   return run_sql("select * from partsinfo where parts_number = '#{parts_number}';").first
 end
@@ -56,11 +38,6 @@ end
 def find_parts_by_number(parts_number)
   return run_sql("select * from cars where brake_pad_front = '#{parts_number}' or brake_pad_rear = '#{parts_number}' or oil_filter = '#{parts_number}' or air_filter = '#{parts_number}';").to_a
 end
-
-# def find_car_by_id(id)
-#   return run_sql("select * from cars where id = #{id};").first
-# end
-
 
 def find_one_car(id)
   return run_sql("select * from cars where id = #{id};").first
