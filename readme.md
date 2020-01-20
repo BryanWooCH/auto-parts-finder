@@ -7,7 +7,7 @@
 **[Auto Parts Finder](https://auto-parts-finder.herokuapp.com/)**
 
 
- ![Wire Frame](https://github.com/BryanWooCH/TicTacToe/blob/master/searchResult.png?raw=true)
+ ![Wire Frame](https://github.com/BryanWooCH/auto-parts-finder/blob/master/searchResult.png?raw=true)
 
 ---
 ### Auto Parts Finder Instruction
@@ -28,7 +28,7 @@
 ---
 ### Wire Frame
 
-  ![Wire Frame](https://github.com/BryanWooCH/TicTacToe/blob/master/wireFrame.png?raw=true)
+  ![Wire Frame](https://github.com/BryanWooCH/auto-parts-finder/blob/master/wireFrame.png?raw=true)
 
 ---
 ### Approaches to Acheive All Functional Features For The Finder
